@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LiRas Store</title>
+  <style>
+    /* Reset dan font */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background-color: #e0f0ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin: 0;
+      color: #003366;
+      letter-spacing: 2px;
+    }
+    .address {
+      font-size: 1rem;
+      color: #004080;
+      margin-top: 4px;
+    }
+    marquee {
+      margin: 15px 0 30px;
+      color: #0059b3;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-bottom: 2px solid #0059b3;
+      padding-bottom: 5px;
+    }
+
+    /* Search bar */
+    .search-container {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+    form {
+      display: flex;
+      background: white;
+      border-radius: 50px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+    form:focus-within {
+      box-shadow: 0 8px 20px rgba(0, 83, 255, 0.4);
+    }
+    input[type="text"] {
+      flex-grow: 1;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      outline: none;
+      color: #222;
+      font-weight: 600;
+    }
+    input[type="text"]::placeholder {
+      color: #a0a0a0;
+      font-weight: 400;
+    }
+    button {
+      background-color: #0059b3;
+      border: none;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 0 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 0 50px 50px 0;
+    }
+    button:hover {
+      background-color: #004080;
+    }
+
+    /* Table styling */
+    table {
+      width: 90%;
+      max-width: 900px;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      background-color: white;
+      margin-bottom: 40px;
+    }
+    th, td {
+      padding: 15px 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #003366;
+    }
+    th {
+      background-color: #0059b3;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover {
+      background-color: #f0f8ff;
+    }
+    img {
+      border-radius: 8px;
+      max-width: 100px;
+      height: auto;
+      object-fit: contain;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    a {
+      color: #0059b3;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 6px 14px;
+      border: 2px solid #0059b3;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      background-color: #0059b3;
+      color: white;
+    }
+
+    /* Section Title */
+    .section-title {
+      font-size: 1.6rem;
+      color: #003366;
+      margin-bottom: 15px;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      input[type="text"] {
+        font-size: 1rem;
+        padding: 12px 16px;
+      }
+      button {
+        font-size: 1rem;
+        padding: 0 20px;
+      }
+      table {
+        width: 100%;
+      }
+      th, td {
+        font-size: 0.9rem;
+        padding: 10px 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LiRasStore</h1>
+    <div class="address">Alamat: Jl. Raya Saketi-Malingping KM. 07</div>
+  </header>
+
+  <marquee behavior="scroll" direction="left" scrollamount="5" style="width: 90%; max-width: 600px; margin-bottom: 40px; border-bottom: 2px solid #0059b3; padding-bottom: 5px; color: #0059b3; font-weight: 600;">
+    Menyediakan Macam Macam Produk Untuk Game, seperti TopUp, Joki, Jual Beli akun Dll.
+  </marquee>
+
+  <!-- Search bar -->
+  <div class="search-container">
+    <form action="/search" method="GET">
+      <input type="text" name="q" placeholder="Cari produk, layanan, atau info..." required />
+      <button type="submit">Cari</button>
+    </form>
+  </div>
+
+  <!-- Section title -->
+  <div class="section-title">JASA KAMI</div>
+
+  <!-- Produk Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Foto Produk</th>
+        <th>Produk</th>
+        <th>Deskripsi</th>
+        <th>Stok</th>
+        <th>Satuan</th>
+        <th>Harga</th>
+        <th>Opsi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><img src="Gambar/Diamond1.png" alt="Diamond" /></td>
+        <td>Diamond</td>
+        <td>FF</td>
+        <td>Banyak</td>
+        <td>Paket</td>
+        <td>Rp. 3k-10M</td>
+        <td><a href="/checkout.html">Beli</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><img src="Gambar/akunff.jpg" alt="Akun FF" /></td>
+        <td>Akun</td>
+        <td>FF</td>
+        <td>1</td>
+        <td>Akun FF</td>
+        <td>Rp. 500k</td>
+        <td><a href="/checkout.html">Beli</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><img src="Gambar/jokiml.jpg" alt="Joki ML" /></td>
+        <td>Joki</td>
+        <td>ML</td>
+        <td>TAK TERBATAS</td>
+        <td>Joki Akun</td>
+        <td>Rp. 2k-250K</td>
+        <td><a href="checkout.html">Beli</a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><img src="Gambar/jokiff.jpg" alt="Joki FF" /></td>
+        <td>Joki</td>
+        <td>FF</td>
+        <td>TAK TERBATAS</td>
+        <td>Joki Akun</td>
+        <td>Rp. 35k-120k</td>
+        <td><a href="checkout.html">Beli</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - LiRasStore</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    .product-summary {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .product-summary strong {
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .actions {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      text-decoration: none;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-confirm {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .btn-confirm:hover {
+      background-color: #219150;
+    }
+
+    .btn-back {
+      background-color: #bdc3c7;
+      color: #2c3e50;
+    }
+
+    .btn-back:hover {
+      background-color: #a6b1b7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Checkout Produk</h1>
+
+    <div class="product-summary">
+      <p><strong>Produk:</strong> Diamond</p>
+      <p><strong>Deskripsi:</strong> Diamond untuk game Free Fire</p>
+      <p><strong>Jumlah:</strong> Paket 70 Diamond</p>
+      <p><strong>Harga:</strong> Rp 10.000</p>
+    </div>
+
+    <form action="#">
+      <label for="nama">Nama Pembeli</label>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama kamu" required>
+
+      <label for="idgame">ID Game</label>
+      <input type="text" id="idgame" name="idgame" placeholder="Masukkan ID game kamu" required>
+
+      <label for="metode">Metode Pembayaran</label>
+      <select id="metode" name="metode" required>
+        <option value="">-- Pilih Metode --</option>
+        <option value="dana">DANA</option>
+        <option value="ovo">OVO</option>
+        <option value="gopay">GoPay</option>
+        <option value="gopay">Qris</option>
+        <option value="transfer">Transfer Bank</option>
+      </select>
+
+      <div class="actions">
+        <a href="dashboard.html" class="btn btn-back">← Kembali</a>
+        <button type="submit" class="btn btn-confirm">Konfirmasi Pesanan</button>
+      </div>
+    </form>
+  </div>
+  <!-- PEMBATAS -->
+  <div class="container">
+    <h1>Checkout Produk</h1>
+
+    <div class="product-summary">
+      <p><strong>Produk:</strong> Akun</p>
+      <p><strong>Deskripsi:</strong> Akun Sultan Free Fire</p>
+      <p><strong>Jumlah:</strong> Paket 70 Diamond</p>
+      <p><strong>Harga:</strong> Rp 10.000</p>
+    </div>
+
+    <form action="#">
+      <label for="nama">Nama Pembeli</label>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama kamu" required>
+
+      <label for="idgame">ID Game</label>
+      <input type="text" id="idgame" name="idgame" placeholder="Masukkan ID game kamu" required>
+
+      <label for="metode">Metode Pembayaran</label>
+      <select id="metode" name="metode" required>
+        <option value="">-- Pilih Metode --</option>
+        <option value="dana">DANA</option>
+        <option value="ovo">OVO</option>
+        <option value="gopay">GoPay</option>
+        <option value="gopay">Qris</option>
+        <option value="transfer">Transfer Bank</option>
+      </select>
+
+      <div class="actions">
+        <a href="index.html" class="btn btn-back">← Kembali</a>
+        <button type="submit" class="btn btn-confirm">Konfirmasi Pesanan</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
+
+
+.btn {
+      padding: 10px 50px;
+      text-decoration: none;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 20px;
+    }
+.kotak{
+  background: blue;
+  width: 200px;
+  height: 200px;
+  animation-name: "animasi_kotak";
+  animation-duration: 5s;
+}
