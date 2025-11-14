@@ -1,0 +1,68 @@
+Form
+  MP3Path: string;
+  paused: Boolean;
+
+Tfrom
+paused:= false;
+Mediaplayer1.Enabled:=false;
+Height :=200;
+Width:=440;
+Top:=(screen.Height-form1.Height) div 2;
+left :=(screen.Width-form1.Width)div 2;
+
+MediaPlayer
+if Button = btstop then
+begin
+Mediaplayer1.Position:=0;
+progressbar1.position:=0;
+end
+else if Button = btstep then
+begin
+if ((Mediaplayer1.Position+5000)<-Mediaplayer1.Length) then
+Mediaplayer1.Position:=Mediaplayer1.position+5000
+else
+begin
+Mediaplayer1.Position:=0;
+progressbar1.Position:=0;
+end;
+Mediaplayer1.Play;end
+else if Button = btBack then
+begin
+if ((Mediaplayer1.Position-5000)>0) then
+Mediaplayer1.Position:=MediaPlayer1.Position-5000
+else
+Mediaplayer1.Position:=0;
+MediaPlayer1.Play;
+
+Timer
+ if MediaPlayer1.Enable then
+begin
+progressBar1.Position:=MediaPlayer1.Position;
+if progressbar1.Position=MediaPlayer1.Legth then
+begin
+Mediaplayer1.stop;
+progressBar1.position:=0;
+Mediaplayer1.Close;
+Mediaplayer1.Enable:=true;
+MediaPlayer1.fileName:=Mppatch;
+Mediaplayer1.open;
+Mediaplayer1.Position:=0
+ProgressBar1.Max:=Mediaplayer1.Legth;
+ProgressBar1.Min:=0;
+
+button 
+if OpenDialog1.execute then
+begin
+Mp3path:=OpenDialog1.FileName;
+with Mediaplayer1 do
+begin
+Enabled:=true;
+Filename:=Mp3Path;
+open;
+Position:=0;
+Play;
+end;
+ProgressBar1.Max:=MediaPlayer1.Length;
+ProgressBar1.Min:=0;
+end;
+end;
