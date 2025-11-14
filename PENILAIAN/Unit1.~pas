@@ -1,0 +1,138 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    GroupBox1: TGroupBox;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Label5: TLabel;
+    Edit5: TEdit;
+    Label6: TLabel;
+    Edit6: TEdit;
+    GroupBox2: TGroupBox;
+    CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
+    Label7: TLabel;
+    Label8: TLabel;
+    Edit7: TEdit;
+    Edit8: TEdit;
+    GroupBox3: TGroupBox;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    Label9: TLabel;
+    Edit9: TEdit;
+    Edit10: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    procedure Edit1Change(Sender: TObject);
+    procedure Edit2Change(Sender: TObject);
+    procedure Edit5Change(Sender: TObject);
+    procedure Edit5Click(Sender: TObject);
+    procedure CheckBox1Click(Sender: TObject);
+    procedure CheckBox2Click(Sender: TObject);
+    procedure RadioButton1Click(Sender: TObject);
+    procedure RadioButton2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Edit1Change(Sender: TObject);
+var
+tulis : real;
+hasil : real;
+begin
+tulis := StrToFloat(Edit1.Text);
+hasil := tulis * 0.4 ;
+Edit3.Text := FloatToStr(hasil);
+end;
+
+procedure TForm1.Edit2Change(Sender: TObject);
+var
+praktek : real;
+hasil : real;
+begin
+praktek := StrToFloat(Edit2.Text);
+hasil := praktek * 0.6 ;
+Edit4.Text := FloatToStr(hasil);
+
+
+end;
+
+procedure TForm1.Edit5Change(Sender: TObject);
+begin
+if Edit5.Text >= '60' then
+Edit6.Text := 'LULUS'
+else
+Edit6.Text := 'GAGAL'   
+end;
+
+
+procedure TForm1.Edit5Click(Sender: TObject);
+var
+tulis : real;
+praktek : real;
+
+hasil : real;
+begin
+tulis := StrToFloat(Edit3.Text);
+praktek := Strtofloat (Edit4.Text);
+hasil := tulis + praktek ;
+Edit5.Text := floattostr(hasil);
+
+end;
+
+procedure TForm1.CheckBox1Click(Sender: TObject);
+begin
+if CheckBox1.Checked = True Then
+Edit7.Text := ' 250000 ';
+end;
+
+procedure TForm1.CheckBox2Click(Sender: TObject);
+begin
+if CheckBox2.Checked = True Then
+Edit8.Text := ' 300000 ';
+end;
+
+procedure TForm1.RadioButton1Click(Sender: TObject);
+begin
+if RadioButton1.Checked = True Then
+Edit9.Text := ' 500000 ';
+end;
+
+procedure TForm1.RadioButton2Click(Sender: TObject);
+begin
+if RadioButton2.Checked = True Then
+Edit9.Text := ' 1000000 ';
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+Var
+MI : Real;
+begin
+
+end;
+
+end.
